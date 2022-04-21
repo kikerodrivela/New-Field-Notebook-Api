@@ -15,25 +15,22 @@ In future commit we add this api to a docker file to put in a docker container a
 ```bash
 .
 ├── package.json
-├── requests
-│   ├── projects.http
-│   └── tasks.http
-├── sql
-│   └── db.sql
 └── src
-    ├── app.js
+    ├── app.jsz
     ├── controllers
-    │   ├── project.controller.js
-    │   └── task.controller.js
+    │   ├── deleteControllers.js
+    │   ├── getControllers.js
+    │   └── postControllers.js
+    │
     ├── database
     │   └── database.js
     ├── index.js
     ├── models
-    │   ├── Project.js
-    │   └── Task.js
+    │   └── models.js
+    │  
     └── routes
-        ├── projects.routes.js
-        └── tasks.routes.js
+        ├── deleteRoutes.js
+        ├── getRoutes.js
+        └── postRoutes.js
 
-7 directories, 15 files
 ```
