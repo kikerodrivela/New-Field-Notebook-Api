@@ -1,7 +1,14 @@
 # New-Field-Notebook-Api
-New version for the field notebook api, this version have better folder structure
 
-The folder structure are:
+This is a the new version of the field notebook api and its works with this stack 
+- nodejs
+- express
+- postgreSQL
+- sequelize
+
+## Project Structure
+
+```bash
 .
 ├── package.json
 ├── requests
@@ -23,3 +30,6 @@ The folder structure are:
     └── routes
         ├── projects.routes.js
         └── tasks.routes.js
+
+7 directories, 15 files
+```
