@@ -231,3 +231,65 @@ export const Datos = sequelize.define("datos", {
     allowNull: false,
   },
 });
+
+/**
+ * MODEL : Actividades
+ * Fields: tiempo, trabajo, numexplotacion, parcela, cultivo, campana, producto, cantidad, personal, maquinaria, datestart, dateend
+ *
+ **/
+
+export const Actividades = sequelize.define("actividades", {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  tiempo: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  nombre: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  numexplotacion: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  parcela: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  cultivo: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  campana: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  producto: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  cantidad: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  personal: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  maquinaria: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  datestart: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  dateend: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});

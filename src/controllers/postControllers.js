@@ -5,10 +5,11 @@ import {
   Almacen,
   Parcelas,
   Datos,
+  Actividades,
 } from "../models/models.js";
 
 export async function createPersonal(req, res) {
-  Personas.create({
+  const persona = {
     nombre: req.body.nombre,
     dni: req.body.dni,
     tipo: req.body.tipo,
@@ -18,32 +19,41 @@ export async function createPersonal(req, res) {
     nif: req.body.nif,
     ropo: req.body.ropo,
     carnet: req.body.carnet,
-  }).then((persona) => {
+  };
+
+  Personas.create(persona).then((persona) => {
     res.send(persona);
+    res.sendStatus(200);
   });
 }
 
 export async function createMaquinaria(req, res) {
-  Maquinaria.create({
-    nombre: req.body.name,
+  const maquinaria = {
+    nombre: req.body.nombre,
     tipo: req.body.tipo,
     matricula: req.body.matricula,
     propiedad: req.body.propiedad,
     mantenimiento: req.body.mantenimiento,
-  }).then((maquinaria) => {
+  };
+
+  Maquinaria.create(maquinaria).then((maquinaria) => {
     res.send(maquinaria);
+    res.sendStatus(200);
   });
 }
 
 export async function createProductos(req, res) {
-  Productos.create({
+  const producto = {
     tipo: req.body.tipo,
     nombre: req.body.nombre,
     concentracion: req.body.concentracion,
     cantidad: req.body.cantidad,
     almacen: req.body.almacen,
-  }).then((producto) => {
+  };
+
+  Productos.create(producto).then((producto) => {
     res.send(producto);
+    res.sendStatus(200);
   });
 }
 
@@ -58,6 +68,7 @@ export async function createParcelas(req, res) {
 
   Parcelas.create(parcelas).then((parcelas) => {
     res.send(parcelas);
+    res.sendStatus(200);
   });
 }
 
@@ -68,6 +79,7 @@ export async function createAlmacen(req, res) {
   };
   Almacen.create(almacen).then((almacen) => {
     res.send(almacen);
+    res.sendStatus(200);
   });
 }
 
@@ -89,5 +101,29 @@ export async function createDatos(req, res) {
 
   Datos.create(datos).then((datos) => {
     res.send(datos);
+    res.sendStatus(200);
+  });
+}
+
+export async function createActividades(req, res) {
+  const actividad = {
+    tiempo: req.body.tiempo,
+    nombre: req.body.nombre,
+    numexplotacion: req.body.numexplotacion,
+    trabajo: req.body.trabajo,
+    parcela: req.body.parcela,
+    cultivo: req.body.cultivo,
+    campana: req.body.campana,
+    producto: req.body.producto,
+    cantidad: req.body.cantidad,
+    personal: req.body.personal,
+    maquinaria: req.body.maquinaria,
+    datestart: req.body.datestart,
+    dateend: req.body.dateend,
+  };
+
+  Actividades.create(actividad).then((actividad) => {
+    res.send(actividad);
+    res.sendStatus(200);
   });
 }
