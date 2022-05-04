@@ -10,6 +10,7 @@ import {
   getParcelasbyID,
   getAlmacenbyID,
   getDatos,
+  getActividades,
 } from "../controllers/getControllers.js";
 
 const router = Router();
@@ -24,5 +25,6 @@ router.get("/personal/:carnet", getPersonalCarnet);
 router.get("/parcelas/:id", getParcelasbyID);
 router.get("/almacen/:id", getAlmacenbyID);
 router.get("/datos", getDatos);
+router.get("/actividades", getActividades);
 
 export default router;

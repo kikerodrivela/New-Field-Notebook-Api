@@ -20,31 +20,11 @@ export const Personas = sequelize.define("personas", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   telefono: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  fitosanitario: {
-    type: DataTypes.BOOLEAN,
-    defaultVale: false,
-  },
-  tipo: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  nif: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  ropo: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  carnet: {
+  email: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -66,10 +46,6 @@ export const Maquinaria = sequelize.define("maquinaria", {
     allowNull: false,
   },
   tipo: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  matricula: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -218,10 +194,6 @@ export const Datos = sequelize.define("datos", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  localizacion: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   codigoexplotacion: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -233,63 +205,24 @@ export const Datos = sequelize.define("datos", {
 });
 
 /**
- * MODEL : Actividades
- * Fields: tiempo, trabajo, numexplotacion, parcela, cultivo, campana, producto, cantidad, personal, maquinaria, datestart, dateend
+ * MODEL : actividad
+ * Fields: id,  datestart, dateend,tiempo, trabajo, numexplotacion, parcela, cultivo, campana, producto, cantidad, personal, maquinara
  *
- **/
+**/
 
-export const Actividades = sequelize.define("actividades", {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  tiempo: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  nombre: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  numexplotacion: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  parcela: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  cultivo: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  campana: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  producto: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  cantidad: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  personal: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  maquinaria: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  datestart: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  dateend: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
+
+export const Actividad = sequelize.define("actividad", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  datestart: { type: DataTypes.DATE, allowNull: true },
+  dateend: { type: DataTypes.DATE, allowNull: true },
+  tiempo: { type: DataTypes.STRING, allowNull: true },
+  trabajo: { type: DataTypes.STRING, allowNull: true },
+  numexplotacion: { type: DataTypes.INTEGER, allowNull: true },
+  parcela: { type: DataTypes.STRING, allowNull: true },
+  cultivo: { type: DataTypes.STRING, allowNull: true },
+  campana: { type: DataTypes.STRING, allowNull: true },
+  producto: { type: DataTypes.STRING, allowNull: true },
+  cantidad: { type: DataTypes.STRING, allowNull: true },
+  personal: { type: DataTypes.STRING, allowNull: true },
+  maquinaria: { type: DataTypes.STRING, allowNull: true },
 });

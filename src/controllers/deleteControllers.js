@@ -4,7 +4,8 @@ import {
   Productos,
   Almacen,
   Parcelas,
-  Actividades,
+  Actividad
+  
 } from "../models/models.js";
 
 export async function deleteParcelabyID(req, res) {
@@ -67,12 +68,12 @@ export async function deleteDatosbyID(req, res) {
   });
 }
 
-export async function deleteActividadbyID(req, res) {
-  Actividades.destroy({
+export async function deleteActividadesbyID(req, res){
+  Actividad.destroy({
     where: {
       id: req.params.id,
     },
-  }).then((actividades) => {
-    res.send(actividades);
+  }).then((actividad) => {
+    res.send(actividad);
   });
 }
